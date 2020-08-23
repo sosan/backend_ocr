@@ -36,10 +36,14 @@ jobs:
     #     pytest
     - name: Run application
       env:
-        FLASK_DEBUG: ${{ secrets.FLASK_DEBUG }}
-        PORT: ${{ secrets.PORT }}
-        HOST: ${{ secrets.HOST }}
-        API_KEY_OCR: ${{ secrets.API_KEY_OCR }}
+        # FLASK_DEBUG: ${{ secrets.FLASK_DEBUG }}
+        # PORT: ${{ secrets.PORT }}
+        # HOST: ${{ secrets.HOST }}
+        # API_KEY_OCR: ${{ secrets.API_KEY_OCR }}
+        FLASK_DEBUG: False
+        PORT: 5000
+        HOST: "0.0.0.0"
+        API_KEY_OCR: "4de29dc0-f625-4e3b-9ec4-2ef6582f5732"
       run: |
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
