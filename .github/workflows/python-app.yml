@@ -43,6 +43,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
-        set FLASK_APP=main.py
-        set FLASK_ENV=development
+        export FLASK_APP=main.py
+        export FLASK_ENV=development
         python -m flask run
