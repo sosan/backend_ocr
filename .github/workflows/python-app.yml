@@ -45,4 +45,4 @@ jobs:
         python -m pip install -r requirements.txt
         export FLASK_APP=main.py
         export FLASK_ENV=development
-        python -m flask run
+        python main.py
