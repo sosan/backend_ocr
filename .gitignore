@@ -3,6 +3,7 @@ env/
 node_modules/
 __pycache__/
 .vscode/
+.github/
 
 *.pyc
 __pycache__/
