@@ -22,6 +22,7 @@ from cloudmersive_ocr_api_client.rest import ApiException
 # settigns
 import settings
 from werkzeug.utils import secure_filename
+from flask.json import jsonify
 
 api_instance = cloudmersive_ocr_api_client.ImageOcrApi()
 image_file = "test.png"
@@ -46,6 +47,10 @@ app.config["CARPETA_SUBIDAS"] = CARPETA_SUBIDAS
 @app.route("/", methods=["GET"])
 def home():
     return render_template("index.html")
+
+@app.route("/t", methods=["post"])
+def test():
+    return jsonify({"resultado": "True"})
 
 @app.route("/api/", methods=["POST"])
 def home_post():
