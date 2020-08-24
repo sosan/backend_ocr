@@ -47,7 +47,7 @@ app.config["CARPETA_SUBIDAS"] = CARPETA_SUBIDAS
 def home():
     return render_template("index.html")
 
-@app.route("/", methods=["POST"])
+@app.route("/api", methods=["POST"])
 def home_post():
     if "user_image" in request.files:
         try:
