@@ -85,15 +85,18 @@ def home_post():
             # uploaded_file = open(file_absolute_path, 'rb',encoding=str)
             api_response = api_instance.image_ocr_post(file_absolute_path)
             print(api_response.text_result)
+            print("9")
             if (api_response.text_result != ""):
+                print("10.A")
                 return {"resultado": api_response.text_result}
             else:
+                print("10.B")
                 return {"resultado": "Sin Texto"}
 
         except ApiException as e:
             print("Exception when calling ImageOcrApi->image_ocr_post: %s\n" % e)
 
-    return redirect("home")
+    return redirect(url_for("home"))
 
 
 
