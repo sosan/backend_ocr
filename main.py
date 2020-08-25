@@ -28,7 +28,7 @@ api_instance = cloudmersive_ocr_api_client.ImageOcrApi()
 image_file = "test.png"
 
 api_instance.api_client.configuration.api_key = {}
-api_instance.api_client.configuration.api_key["Apikey"] = os.getenv("API_KEY_OCR")
+api_instance.api_client.configuration.api_key["Apikey"] = os.environ.get("API_KEY_OCR")
 print("{}" .format(api_instance.api_client.configuration.api_key["Apikey"]))
 
 
@@ -109,7 +109,7 @@ def get_random_string(length):
 
 if __name__ == "__main__":
     settings.readconfig()
-    env_host = os.getenv("HOST", "0.0.0.0")
-    env_port = int(os.getenv("PORT", 5000))
-    env_debug = os.getenv("FLASK_DEBUG", True)
+    env_host = os.environ.get("HOST", "0.0.0.0")
+    env_port = int(os.environ.get("PORT", 5000))
+    env_debug = os.environ.get("FLASK_DEBUG", True)
     app.run(host=env_host, port=env_port, debug=env_debug)
