@@ -29,7 +29,7 @@ image_file = "test.png"
 
 api_instance.api_client.configuration.api_key = {}
 api_instance.api_client.configuration.api_key["Apikey"] = os.getenv("API_KEY_OCR")
-
+print("{}" .format(api_instance.api_client.configuration.api_key["Apikey"]))
 
 
 
