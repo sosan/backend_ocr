@@ -135,9 +135,8 @@ def save_file(file_base64: None, nombrefile: str, isFile: bool):
             arch.write(file_base64.read())
             arch.close()
     else:
-        base64_img_bytes = file_base64.encode('utf-8')
         with open(os.path.join(app.config["CARPETA_SUBIDAS"], nombrefile), "wb") as arch:
-            decoded_image_data = base64.decodebytes(base64_img_bytes)
+            decoded_image_data = base64.decodebytes(file_base64.encode('utf-8'))
             arch.write(decoded_image_data)
             arch.close()
 
