@@ -105,7 +105,8 @@ def process_request(request: request):
             return file_base64, isFile, nombrefile, isError
 
         file_base64 = request.form["user_image"]
-        file_base64 = file_base64.split(",")[1]
+        if file_base64.count(",") > 0:
+            file_base64 = file_base64.split(",")[1]
 
         nombrefile = get_file_name(".jpg", 10)
 
